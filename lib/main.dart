@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:rotation_clock/pages/cpro_land/cpro_land_binding.dart';
+import 'package:rotation_clock/pages/cpro_land/cpro_land_view.dart';
 import 'package:rotation_clock/pages/cpro_main/cpro_main_binding.dart';
 import 'package:rotation_clock/pages/cpro_main/cpro_main_view.dart';
+import 'package:rotation_clock/pages/cpro_main/item_slider.dart';
 import 'package:rotation_clock/pages/cpro_mode/cpro_mode_binding.dart';
 import 'package:rotation_clock/pages/cpro_mode/cpro_mode_view.dart';
 import 'package:rotation_clock/pages/cpro_setting/cpro_setting_binding.dart';
@@ -31,7 +34,7 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       getPages: CPro,
-      initialRoute: '/cpro_main',
+      initialRoute: '/cpro_tab',
       theme: ThemeData(
         useMaterial3: true,
         primaryColor: primaryColor,
@@ -69,7 +72,9 @@ class MyApp extends StatelessWidget {
   }
 }
 List<GetPage<dynamic>> CPro = [
+  GetPage(name: '/cpro_tab', page: () => CproLandView(), binding: CproLandBinding()),
   GetPage(name: '/cpro_main', page: () => const CproMainView(), binding: CproMainBinding()),
+  GetPage(name: '/cpro_slider', page: () => ItemSlider()),
   GetPage(name: '/cpro_setting', page: () => CproSettingView(), binding: CproSettingBinding()),
   GetPage(name: '/cpro_mode', page: () => CproModeView(), binding: CproModeBinding()),
 ];

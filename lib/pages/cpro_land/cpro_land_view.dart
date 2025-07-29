@@ -10,8 +10,8 @@ class CproLandView extends GetView<CproLandLogic> {
     return Scaffold(
       body: Center(
         child: Obx(
-          () => controller.bogan.value
-              ? const CircularProgressIndicator(color: Colors.blueAccent)
+          () => controller.muller.value
+              ? const CircularProgressIndicator(color: Colors.white38)
               : buildError(),
         ),
       ),
@@ -25,7 +25,7 @@ class CproLandView extends GetView<CproLandLogic> {
         children: [
           IconButton(
             onPressed: () {
-              controller.ptfyuo();
+              controller.pcaoefdm();
             },
             icon: const Icon(
               Icons.restart_alt,

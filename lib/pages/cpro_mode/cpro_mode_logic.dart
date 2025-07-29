@@ -8,7 +8,7 @@ class CproModeLogic extends GetxController {
   void cjhbahoiqds() async {
     final hadNetwork = await InternetConnectionChecker.instance.hasConnection;
     if (!hadNetwork) {
-      Fluttertoast.showToast(msg: 'Check the network and try again');
+      Fluttertoast.showToast(msg: 'Unable to connect to the server, please check your network settings');
     } else {
       Fluttertoast.showToast(msg: 'You are connected to the internet');
       Get.back();
